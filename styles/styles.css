@@ -1,0 +1,32 @@
+.game-board{
+    position: fixed;
+    height: 1358px;
+    padding-bottom: 0;
+    margin: 0;
+}
+.back-image{
+    width: 2800px;
+    height: 1358px;
+    padding-bottom: 0;
+    margin: 0;
+}
+canvas {
+    background-size: 150%;
+    background-position: 0 100%;
+    border: solid 3px white;
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+#score-counter{
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+}
