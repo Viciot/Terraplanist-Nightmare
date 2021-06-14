@@ -1,5 +1,5 @@
 const earthlingImg = document.createElement("img");
-earthlingImg.src = "/styles/resources/earthlingRightOK.png"
+earthlingImg.src = "/styles/resources/earthlingrighttrim.png"
 class flatEarthling{
     constructor(canvasContext, positionX, positionY){
         this.ctx = canvasContext,
