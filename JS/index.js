@@ -22,7 +22,7 @@ window.onload = ()=>{
     };
 
     let earthlingImg = new Image();
-    earthlingImg.src = "/styles/resources/1000_F_245899118_jVKW1pcJTOWp8LraFPTwUaWFjdSkrX9Q.jpg";
+    earthlingImg.src = "/styles/resources/earthlingRightOK.png";
     
     const earthling = {
         image : earthlingImg,
@@ -31,17 +31,180 @@ window.onload = ()=>{
         height: 500,
         width: 300,
         draw: function(){
-            // console.log("DRAWING EARTHLING!");
+            
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         }        
     }
 
+    let terrGlobeImg = new Image();
+    terrGlobeImg.src = "/styles/resources/terrestrialGlobe.png"
+
+    const terrGlobe = {
+        image : terrGlobeImg,
+        x: canvas.width / 5 - 160,
+        y: canvas.height / 6 - 100,
+        height: 200,
+        width: 200,
+        draw: function(){
+            
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        },
+        move: function() {
+            if (this.y > canvas.height) {
+                objects.splice(this, 1);
+            } else {
+                this.y += 2;
+            }
+        }
+    }
+
+    let bookOneImg = new Image();
+    bookOneImg.src = "/styles/resources/oldBook1.png"
+
+    const bookOne = {
+        image : bookOneImg,
+        x: canvas.width / 4 - 180,
+        y: canvas.height / 2 - 100,
+        height: 200,
+        width: 200,
+        draw: function(){
+            
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        },
+        move: function() {
+            if (this.y > canvas.height) {
+                objects.splice(this, 1);
+            } else {
+                this.y += 2;
+            }
+        }
+    }
+
+    let bookTwoImg = new Image();
+    bookTwoImg.src = "/styles/resources/oldBook2.png"
+
+    const bookTwo = {
+        image : bookTwoImg,
+        x: canvas.width / 2 - 160,
+        y: canvas.height / 5 - 100,
+        height: 300,
+        width: 300,
+        draw: function(){
+            
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        },
+        move: function() {
+            if (this.y > canvas.height) {
+                objects.splice(this, 1);
+            } else {
+                this.y += 2;
+            }
+        }
+    }
+
+    let bookThreeImg = new Image();
+    bookThreeImg.src = "/styles/resources/oldBook3.png"
+
+    const bookThree = {
+        image : bookThreeImg,
+        x: canvas.width / 1 - 600,
+        y: canvas.height / 3 - 400,
+        height: 400,
+        width: 300,
+        draw: function(){
+            
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        },
+        move: function() {
+            if (this.y > canvas.height) {
+                objects.splice(this, 1);
+            } else {
+                this.y += 2;
+            }
+        }
+    }
+
+    let pithaRightImg = new Image();
+    pithaRightImg.src = "/styles/resources/pithagoras OK.png"
+
+    const pithaRight = {
+        image : pithaRightImg,
+        x: canvas.width / 1- 400,
+        y: canvas.height / 2 - 400,
+        height: 300,
+        width: 300,
+        draw: function(){
+            
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        },
+        move: function() {
+            if (this.y > canvas.height) {
+                objects.splice(this, 1);
+            } else {
+                this.y += 2;
+            }
+        }
+    }
+
+    let pithaLeftImg = new Image();
+    pithaLeftImg.src = "/styles/resources/pithagoras OK2.png"
+
+    const pithaLeft = {
+        image : pithaLeftImg,
+        x: canvas.width / 1 - 500,
+        y: canvas.height / 2 - 780,
+        height: 300,
+        width: 300,
+        draw: function(){
+            
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        },
+        move: function() {
+            if (this.y > canvas.height) {
+                objects.splice(this, 1);
+            } else {
+                this.y += 2;
+            }
+        }
+    }
+
+    let randomObject
+    let objectArr = [];
+    let objects =[]
+    function drawFallingObjects() {
+        gameInterval = requestAnimationFrame(drawFallingObjects);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        randomObject.draw();
+    }
+
+    setInterval(function() {   //intento de seleccionar un objeto del array  de objetos que tienen que caer
+    
+        
+        objectArr = [terrGlobe, bookOne, bookTwo, bookThree, pithaLeft, pithaRight]
+        
+        randomObject = objectArr[Math.floor(Math.random() * objectArr.length)]
+        objects.push(randomObject);//creamos un array vacio donde se van metiendo objetos
+        
+    }, 1000);
+    
+    
     function startGame(){
         gameInterval = requestAnimationFrame(startGame);
         console.log = ("Game Started!!");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         lunarBackground.draw();
         earthling.draw();
+        objects.forEach(object=>{//loopeamos el array donde se van metiendo los objetos y los dibujamos.
+            object.draw()
+            object.move() 
+        })
+        //console.log(objects);
+        terrGlobe.draw();
+        bookOne.draw();
+        bookTwo.draw();
+        bookThree.draw();
+        pithaRight.draw();
+        pithaLeft.draw();
     }
     
     window.addEventListener("keydown", moveEarthling);
@@ -84,6 +247,6 @@ window.onload = ()=>{
         }
     }
 
-startGame()
+    startGame()
 }
 
