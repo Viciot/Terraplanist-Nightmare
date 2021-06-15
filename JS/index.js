@@ -1,4 +1,4 @@
-window.onload = ()=>{//cuando cargue la pagina ...
+ window.onload = ()=>{//cuando cargue la pagina ...
     
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -30,8 +30,10 @@ window.onload = ()=>{//cuando cargue la pagina ...
         y: canvas.height / 2 - 100,
         height: 350,
         width: 90,
+        lives: 2500,
         draw: function(){
-            
+            //(ctx.fillStyle = "white"),
+            //ctx.fillRect(this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         }        
     }
@@ -46,7 +48,8 @@ window.onload = ()=>{//cuando cargue la pagina ...
         height: 200,
         width: 200,
         draw: function(){
-            
+            //(ctx.fillStyle = "white"),
+            //ctx.fillRect(this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move: function() {
@@ -55,13 +58,13 @@ window.onload = ()=>{//cuando cargue la pagina ...
                 this.y = canvas.height / 2 - 780
                 this.x = Math.floor(Math.random()*canvas.width) 
             } else {
-                this.y += 2;
+                this.y += 1;
             }
         }
     }
 
     let bookOneImg = new Image();
-    bookOneImg.src = "/styles/resources/oldBook1.png"
+    bookOneImg.src = "/styles/resources/oldBook1 (1).png"
 
     const bookOne = {
         image : bookOneImg,
@@ -70,7 +73,8 @@ window.onload = ()=>{//cuando cargue la pagina ...
         height: 200,
         width: 200,
         draw: function(){
-            
+            //(ctx.fillStyle = "white"),
+            //ctx.fillRect(this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move: function() {
@@ -79,7 +83,7 @@ window.onload = ()=>{//cuando cargue la pagina ...
                 this.y = canvas.height / 2 - 780
                 this.x = Math.floor(Math.random()*canvas.width) 
             } else {
-                this.y += 2;
+                this.y += 1;
             }
         }
     }
@@ -91,10 +95,11 @@ window.onload = ()=>{//cuando cargue la pagina ...
         image : bookTwoImg,
         x: canvas.width / 2 - 160,
         y: canvas.height ,
-        height: 300,
-        width: 300,
+        height: 150,
+        width: 150,
         draw: function(){
-            
+            //(ctx.fillStyle = "white"),
+            //ctx.fillRect(this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move: function() {
@@ -103,7 +108,7 @@ window.onload = ()=>{//cuando cargue la pagina ...
                 this.y = canvas.height / 2 - 780
                 this.x = Math.floor(Math.random()*canvas.width) 
             } else {
-                this.y += 2;
+                this.y += 1;
             }
         }
     }
@@ -115,10 +120,11 @@ window.onload = ()=>{//cuando cargue la pagina ...
         image : bookThreeImg,
         x: canvas.width / 1 - 600,
         y: canvas.height / 2 - 830,
-        height: 400,
-        width: 300,
+        height: 175,
+        width: 150,
         draw: function(){
-            
+            //(ctx.fillStyle = "white"),
+            //ctx.fillRect(this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move: function() {
@@ -127,7 +133,7 @@ window.onload = ()=>{//cuando cargue la pagina ...
                 this.y = canvas.height/2 - 830
                 this.x = Math.floor(Math.random()*canvas.width) 
             } else {
-                this.y += 2;
+                this.y += 1;
             }
         }
     }
@@ -139,10 +145,11 @@ window.onload = ()=>{//cuando cargue la pagina ...
         image : pithaRightImg,
         x: canvas.width / 1- 400,
         y: canvas.height / 2 - 800,
-        height: 300,
-        width: 300,
+        height: 225,
+        width: 150,
         draw: function(){
-            
+            //(ctx.fillStyle = "white"),
+            //ctx.fillRect(this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move: function() {
@@ -151,7 +158,7 @@ window.onload = ()=>{//cuando cargue la pagina ...
                 this.y = canvas.height / 2 - 800
                 this.x = Math.floor(Math.random()*canvas.width) 
             } else {
-                this.y += 2;
+                this.y += 1;
             }
         }
     }
@@ -163,10 +170,11 @@ window.onload = ()=>{//cuando cargue la pagina ...
         image : pithaLeftImg,
         x: canvas.width / 1 - 500, //  2100/1-500
         y: canvas.height / 2 - 800,
-        height: 300,
-        width: 300,
+        height: 175,
+        width: 125,
         draw: function(){
-            
+            //(ctx.fillStyle = "white"),
+            //ctx.fillRect(this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         },
         move: function() {
@@ -175,52 +183,128 @@ window.onload = ()=>{//cuando cargue la pagina ...
                 this.y = canvas.height / 2 - 800//resetear posicion vertical
                 this.x = Math.floor(Math.random()*canvas.width)  //randomizar horizontal
             } else {
-                this.y += 5;
+                this.y += 1;
+            }
+            
+            
+        }
+    }
+    
+    let appleImg = new Image();
+    appleImg.src = "/styles/resources/appletrim.png"
+
+    const apple = {
+        image : appleImg,
+        x: canvas.width / 1 - 500, //  2100/1-500
+        y: canvas.height / 2 - 800,
+        height: 100,
+        width: 100,
+        draw: function(){
+            //(ctx.fillStyle = "white"),
+            //ctx.fillRect(this.x, this.y, this.width, this.height);
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        },
+        move: function() {
+            if (this.y > canvas.height) {              
+                this.y = canvas.height / 2 - 800//resetear posicion vertical
+                this.x = Math.floor(Math.random()*canvas.width)  //randomizar horizontal
+            } else {
+                this.y +=1/10;
             }
             
             
         }
     }
 
-    //function drawFallingObjects() {
-    //    gameInterval = requestAnimationFrame(drawFallingObjects);
-    //    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    //    randomObject.draw();
-    //}
-    
 
     let randomObject
     let objectArr = [];
     let objects =[]
 
-    setInterval(function() {   //cada intervalo dado se ejecuta lo que este dentro de este bloque.
-    
-        objectArr = [terrGlobe, bookOne, bookTwo, bookThree, pithaLeft, pithaRight]//array donde tenemos los objetos.
+    function detectAppleCollision(earthling, apple) {
+        let collision = 
+            earthling.x < apple.x + apple.width &&
+            earthling.x + earthling.width > apple.x &&
+            earthling.y < apple.y + apple.height &&
+            earthling.y + earthling.height > apple.height;
         
-        randomObject = objectArr[Math.floor(Math.random() * objectArr.length)]//asignamos los objetos de manera aleatoria a un array vacio, randomObject.
-        objects.push(randomObject);//vamos metiendo objetos en el array objects.
+        let earthlingLivesNode  = document.getElementById("score-counter");
+        earthlingLivesNode.textContent = String(Math.floor(earthling.lives));
+
+        if (collision){
+            earthling.lives += (1/50);
+        }
+    }
+    var myMusicSlap = new Audio("/styles/resources/slap-effects.mp3")
+    //var MyMusicTrombon = new Audio("/styles/resources/Sad-Trombone-A1-www.fesliyanstudios.com.mp3") 
+    function detectCollision(earthling, object) {
+        let collision = 
+            earthling.x < object.x + object.width &&
+            earthling.x + earthling.width > object.x &&
+            earthling.y < object.y + object.height &&
+            earthling.y + earthling.height > object.height;
         
-    }, 500);
+        let earthlingLivesNode  = document.getElementById("score-counter");
+        earthlingLivesNode.textContent = String(earthling.lives);
+
+        
+        
+        if (collision){
+            earthling.lives -= 1;
+            myMusicSlap.play();
+            //let earthlingLivesRemaining
+            //earthlingLivesRemaining = parseInt(earthlingLivesNodeText) - 1;
+            //earthlingLivesNode.textContent = earthlingLivesRemaining.toString()
+   
+            if (earthling.lives === 0) {
+                //MyMusicTrombon.play()
+                alert("GAME OVER, YOU WIN!!!"); 
+                cancelAnimationFrame(gameInterval);
+                window.location.reload();
+            }; 
+            
+
+            //alert(`crash ${collision} on ${earthling.x} ${earthling.y} ${object.x} ${object.y}`)
+        }
+    }
+    var MyMusicYuhu = new Audio("/styles/resources/mario-bros-woo-hoo.mp3")
+    document.getElementById("start-button").onclick = ()=>{
+        startGame()
+        MyMusicYuhu.play()
+        setInterval(function() {   //cada intervalo dado se ejecuta lo que este dentro de este bloque.
+        
+            //bookTwo, este libro esta dando problemas???
+            //cuando me cruzo con el eje "y" de un objeto que ya ha caido cuenta como colision, por qué??
     
+            objectArr = [ terrGlobe, bookOne, bookTwo, bookThree, pithaLeft, pithaRight]//array donde tenemos los objetos.
+            
+            randomObject = objectArr[Math.floor(Math.random() * objectArr.length)]//asignamos los objetos de manera aleatoria a un array vacio, randomObject.
+            objects.push(randomObject);//vamos metiendo objetos en el array objects.
+            
+        }, 250);
+    }
     
+    var myMusic = new Audio("/styles/resources/Django-Reinhardt-Chicago.mp3")
+    
+
     function startGame(){
         gameInterval = requestAnimationFrame(startGame);
         console.log = ("Game Started!!");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         lunarBackground.draw();
         earthling.draw();
-        objects.forEach(object=>{//loopeamos el array donde se van metiendo los objetos y los dibujamosy movemos.
-            object.draw()
-            object.move() 
-        })
-        //console.log(objects);
-        //terrGlobe.draw();
-        //bookOne.draw();
-        //bookTwo.draw();
-        //bookThree.draw();
-        //pithaRight.draw();
-        //pithaLeft.draw();
+        objects.forEach(object=>{//loopeamos el array donde se van metiendo los objetos y los dibujamos y movemos.
+        object.draw();
+        object.move();
+        apple.draw();
+        apple.move();
+        detectCollision(earthling, object);
+        detectAppleCollision(earthling, apple)
+        }) 
+        myMusic.play();    
+         
     }
+        
     
     window.addEventListener("keydown", moveEarthling);
 
@@ -247,6 +331,8 @@ window.onload = ()=>{//cuando cargue la pagina ...
                     
                     break
                 case 39: //right
+                    event.preventDefault();
+                    earthlingImg.src = "/styles/resources/earthlingrighttrim.png"
                     if (earthling.x < canvas.width - earthling.width) {
                         earthling.x += 35;
                     } else {
@@ -254,6 +340,8 @@ window.onload = ()=>{//cuando cargue la pagina ...
                     }
                     break;
                 case 37: //left
+                    event.preventDefault();
+                    earthlingImg.src = "/styles/resources/earthlinglefttrim.png"
                     if (earthling.x > 0){
                         earthling.x -= 35;
                     } else {
@@ -264,6 +352,6 @@ window.onload = ()=>{//cuando cargue la pagina ...
         }
     }
 
-    startGame()
-}
+    
+ }
 
