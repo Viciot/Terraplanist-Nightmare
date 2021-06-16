@@ -1,9 +1,8 @@
 @font-face {
     font-family: "Nightmare";
     src: url("./styles/resources/Creepster-Regular.ttf");
-}{
-    
 }
+
 .game-board{
     position: relative;
     height: 1358px;
