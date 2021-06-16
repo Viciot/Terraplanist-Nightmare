@@ -10,7 +10,7 @@ window.onload = () => {
   let gameInterval = null; //
 
   let lunarBackgroundImg = new Image();
-  lunarBackgroundImg.src = "./styles/resources/280531.jpg";
+  lunarBackgroundImg.src = "/styles/resources/280531.jpg";
 
   const lunarBackground = {
     image: lunarBackgroundImg,
@@ -25,7 +25,7 @@ window.onload = () => {
   };
 
   let earthlingImg = new Image();
-  earthlingImg.src = "./styles/resources/earthlingrighttrim.png";
+  earthlingImg.src = "/styles/resources/earthlingrighttrim.png";
 
   const earthling = {
     image: earthlingImg,
@@ -42,7 +42,7 @@ window.onload = () => {
   };
 
   let terrGlobeImg = new Image();
-  terrGlobeImg.src = "./styles/resources/terrestrialGlobe.png";
+  terrGlobeImg.src = "/styles/resources/terrestrialGlobe.png";
 
   const terrGlobe = {
     image: terrGlobeImg,
@@ -67,7 +67,7 @@ window.onload = () => {
   };
 
   let bookOneImg = new Image();
-  bookOneImg.src = "./styles/resources/oldBook1 (1).png";
+  bookOneImg.src = "/styles/resources/oldBook1 (1).png";
 
   const bookOne = {
     image: bookOneImg,
@@ -92,7 +92,7 @@ window.onload = () => {
   };
 
   let bookTwoImg = new Image();
-  bookTwoImg.src = "./styles/resources/oldBook2.png";
+  bookTwoImg.src = "/styles/resources/oldBook2.png";
 
   const bookTwo = {
     image: bookTwoImg,
@@ -117,7 +117,7 @@ window.onload = () => {
   };
 
   let bookThreeImg = new Image();
-  bookThreeImg.src = "./styles/resources/oldBook3.png";
+  bookThreeImg.src = "/styles/resources/oldBook3.png";
 
   const bookThree = {
     image: bookThreeImg,
@@ -142,7 +142,7 @@ window.onload = () => {
   };
 
   let pithaRightImg = new Image();
-  pithaRightImg.src = "./styles/resources/pithagoras OK.png";
+  pithaRightImg.src = "/styles/resources/pithagoras OK.png";
 
   const pithaRight = {
     image: pithaRightImg,
@@ -167,7 +167,7 @@ window.onload = () => {
   };
 
   let pithaLeftImg = new Image();
-  pithaLeftImg.src = "./styles/resources/pithagoras OK2.png";
+  pithaLeftImg.src = "/styles/resources/pithagoras OK2.png";
 
   const pithaLeft = {
     image: pithaLeftImg,
@@ -192,7 +192,7 @@ window.onload = () => {
   };
 
   let appleImg = new Image();
-  appleImg.src = "./styles/resources/appletrim.png";
+  appleImg.src = "/styles/resources/appletrim.png";
 
   const apple = {
     image: appleImg,
@@ -218,7 +218,7 @@ window.onload = () => {
   let randomObject;
   let objectArr = [];
   let objects = [];
-  var myMusicApple = new Audio("./styles/resources/mixkit-retro-game-notification-212.wav");
+  var myMusicApple = new Audio("/styles/resources/mixkit-retro-game-notification-212.wav");
 
   function detectAppleCollision(earthling, apple) {
     let collision =
@@ -235,7 +235,7 @@ window.onload = () => {
       myMusicApple.play();
     }
   }
-  var myMusicSlap = new Audio("./styles/resources/slap-effects.mp3");
+  var myMusicSlap = new Audio("/styles/resources/slap-effects.mp3");
   //var MyMusicTrombon = new Audio("/styles/resources/Sad-Trombone-A1-www.fesliyanstudios.com.mp3")
 
   function detectCollision(earthling, object) {
@@ -269,7 +269,7 @@ window.onload = () => {
       //alert(`crash ${collision} on ${earthling.x} ${earthling.y} ${object.x} ${object.y}`)
     }
   }
-  var MyMusicYuhu = new Audio("./styles/resources/mario-bros-woo-hoo.mp3");
+  var MyMusicYuhu = new Audio("/styles/resources/mario-bros-woo-hoo.mp3");
  /////////////////////////////////////////////////////////
 
 
@@ -308,7 +308,7 @@ window.onload = () => {
     }, 250);
   };
 
-  var myMusic = new Audio("./styles/resources/Django-Reinhardt-Chicago.mp3");
+  var myMusic = new Audio("/styles/resources/Django-Reinhardt-Chicago.mp3");
 
   
 
@@ -359,7 +359,7 @@ window.onload = () => {
           break;
         case 39: //right
           event.preventDefault();
-          earthlingImg.src = "./styles/resources/earthlingrighttrim.png";
+          earthlingImg.src = "/styles/resources/earthlingrighttrim.png";
           if (earthling.x < canvas.width - earthling.width) {
             earthling.x += 35;
           } else {
@@ -368,7 +368,7 @@ window.onload = () => {
           break;
         case 37: //left
           event.preventDefault();
-          earthlingImg.src = "./styles/resources/earthlinglefttrim.png";
+          earthlingImg.src = "/styles/resources/earthlinglefttrim.png";
           if (earthling.x > 0) {
             earthling.x -= 35;
           } else {
